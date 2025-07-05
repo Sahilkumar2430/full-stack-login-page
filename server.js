@@ -17,7 +17,7 @@ const ApplicationSchema = new mongoose.Schema({
 const Application = mongoose.model('Application', ApplicationSchema);
 
 // Serve frontend files
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '..')));
 
 // API endpoint to handle form submission
 app.post('/api/apply', async (req, res) => {
@@ -33,7 +33,7 @@ app.post('/api/apply', async (req, res) => {
 
 // Fallback to index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 // Start server
